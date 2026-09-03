@@ -8,7 +8,7 @@ class productoController{
 
         $productos=$productoModel->getAll();
 
-        require_once __DIR__ . "/../views/index.php";
+        require_once __DIR__ . "/../views/producto/index.php";
     }
 }
 ?>

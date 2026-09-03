@@ -12,10 +12,10 @@ class Database{
     {
         $env=parse_ini_file(__DIR__ . "/../.env");
         $this->host=$env['DB_HOST'];
-        $this->port=['DB_PORT'];
-        $this->dbname=['DB_NAME'];
-        $this->user=['DB_USER'];
-        $this->pwd=['DB_PWD']; 
+        $this->port=$env['DB_PORT'];
+        $this->dbname=$env['DB_NAME'];
+        $this->user=$env['DB_USER'];
+        $this->pwd=$env['DB_PWD']; 
     }
 
     public function conectar(){

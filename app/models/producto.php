@@ -12,7 +12,14 @@ class Producto{
 
     public function getALL()
     {
-        $sql="SELECT * FROM producto";
+        $sql="SELECT 
+        p.id,
+        p.nombre,
+        p.precio,
+        p.categoria,
+        pr.nombre AS proveedor
+        FROM producto p
+        JOIN proveedores pr ON p.id_proveedor = pr.id;";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }

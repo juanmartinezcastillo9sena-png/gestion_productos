@@ -10,7 +10,7 @@ class Producto{
         $this->connection = $database->conectar();
     }
 
-    public function getALL()
+    public function getAll()
     {
         $sql="SELECT 
         p.id,

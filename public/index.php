@@ -11,4 +11,11 @@ $ClienteController->index();
 
 $ProveedorController=new proveedoresController();
 $ProveedorController->index();
+
+$ProductoController = new productoController();
+if (isset($_GET['id'])) {
+    $ProductoController->show($_GET['id']);
+} else {
+    $ProductoController->index();
+}
 ?>

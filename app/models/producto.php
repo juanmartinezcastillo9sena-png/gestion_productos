@@ -16,10 +16,11 @@ class Producto{
         p.id,
         p.nombre,
         p.precio,
-        p.categoria,
-        pr.nombre AS proveedor
+        pr.nombre AS proveedor,
+        ca.nombre AS categoria
         FROM producto p
-        JOIN proveedores pr ON p.id_proveedor = pr.id;";
+        JOIN proveedores pr ON p.id_proveedor = pr.id
+        JOIN categoria ca ON p.id_categoria= ca.id;";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }

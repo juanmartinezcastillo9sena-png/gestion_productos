@@ -29,11 +29,9 @@
         </tr>
         <?php foreach ($productoConsultado as $producto):?>
         <tr>
-            <td><?= $producto['id']; ?></td>
+            <td><?= $producto['ID']; ?></td>
             <td><?= $producto['nombre']; ?></td>
             <td><?= $producto['precio']; ?></td>
-            <td><?= $producto['proveedor']; ?></td>
-            <td><?= $producto['categoria']; ?></td>
         </tr>
         <?php endforeach; ?>
 </table>

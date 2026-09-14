@@ -24,10 +24,16 @@
             <td>ID</td>
             <td>Nombre</td>
             <td>Precio</td>
+            <td>Proveedor</td>
+            <td>Categoria</td>
         </tr>
+        <?php foreach ($productoConsultado as $producto):?>
         <tr>
-            <td><?= $productoConsultado['ID']; ?></td>
-            <td><?= $productoConsultado['nombre']; ?></td>
-            <td><?= $productoConsultado['precio']; ?></td>
+            <td><?= $producto['id']; ?></td>
+            <td><?= $producto['nombre']; ?></td>
+            <td><?= $producto['precio']; ?></td>
+            <td><?= $producto['proveedor']; ?></td>
+            <td><?= $producto['categoria']; ?></td>
         </tr>
+        <?php endforeach; ?>
 </table>

@@ -1,18 +1,28 @@
 <?php
 require_once __DIR__ . "/../models/producto.php";
 
-class productoController{
-    public function index(){
+class productoController
+{
+    public function index()
+    {
 
-        $productoModel= new Producto();
+        $productoModel = new Producto();
 
-        $productos=$productoModel->getAll();
-        
-        $productoConsultado = $productoModel->getByid(1);
+        try {
+            $productos = $productoModel->getAll();
+        } catch (PDOException) {
+            echo "Se encontraron errores";
+        }
+
+        try {
+            $productoConsultado = $productoModel->getByid(1);
+        } catch (PDOException) {
+            echo "Se encontraron errores";
+        }
+
+
+
 
         require_once __DIR__ . "/../views/producto/index.php";
     }
-
-       
 }
-?>

@@ -1,16 +1,27 @@
 <?php
 require_once __DIR__ . "/../models/proveedor.php";
 
-class proveedoresController{
-    public function index(){
+class proveedoresController
+{
+    public function index()
+    {
 
-        $proveedorModel=New Proveedor();
+        $proveedorModel = new Proveedor();
 
-        $proveedores=$proveedorModel->getAll();
+        try {
+            $proveedores = $proveedorModel->getAll();
+        } catch (PDOException) {
+            echo "Se encontraro errores";
+        }
+       
+        try {
+            $proveedorConsultado = $proveedorModel->getById(3);
+        } catch (PDOException) {
+            echo "Se encontraro errores";
+        }
 
-        $proveedorConsultado=$proveedorModel->getById(3);
+
 
         require_once __DIR__ . "/../views/proveedores/index.php";
     }
 }
-?>

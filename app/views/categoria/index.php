@@ -1,18 +1,22 @@
 <h1>Categorias</h1>
-<table border="2">
-    <tr>
-        <td>ID</td>
-        <td>Nombre</td>
-        <td>Descripcion</td>
-    </tr>
-    <?php foreach($categorias as $categoria):?>
+<?php if (!empty($categorias)) { ?>
+    <table border="2">
         <tr>
-            <td><?= $categoria['id'] ?></td>
-            <td><?= $categoria['nombre'] ?></td>
-            <td><?= $categoria['descripcion'] ?></td>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
         </tr>
-    <?php endforeach ?>
-</table>
+        <?php foreach ($categorias as $categoria): ?>
+            <tr>
+                <td><?= $categoria['id'] ?></td>
+                <td><?= $categoria['nombre'] ?></td>
+                <td><?= $categoria['descripcion'] ?></td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+<?php } else { ?>
+    <p>No hay categoria para mostrar</p>
+<?php } ?>
 
 <h2>Categoria Consultada</h2>
 <table border="1">
@@ -21,11 +25,11 @@
         <td>Nombre</td>
         <td>Descripcion</td>
     </tr>
-    <?php foreach($categoriaConsultada as $categoria): ?>
+    <?php foreach ($categoriaConsultada as $categoria): ?>
         <tr>
             <td><?= $categoria['id'] ?></td>
             <td><?= $categoria['nombre'] ?></td>
             <td><?= $categoria['descripcion'] ?></td>
         </tr>
-    <?php endforeach ?>    
+    <?php endforeach ?>
 </table>

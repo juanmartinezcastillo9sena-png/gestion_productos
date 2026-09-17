@@ -11,7 +11,7 @@ class Categoria{
     }
 
     public function getAll(){
-        try{$sql="SELECT * FROM categorias";
+        try{$sql="SELECT * FROM categoria";
         $consulta=$this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
 

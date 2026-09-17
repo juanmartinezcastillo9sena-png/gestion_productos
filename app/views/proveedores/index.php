@@ -1,5 +1,6 @@
 <h1>Listado de Proveedores</h1>
 
+<?php if(!empty($proveedores)){ ?>
 <table border="2">
     <tr>
         <td>Nombre</td>
@@ -14,6 +15,9 @@
         </tr>
     <?php endforeach; ?>
 </table>
+<?php } else{ ?>
+<p>No hay proveedores para mostrar</p>
+<?php } ?>
 
 <h2>Proveedor Consultado</h2>
 <table border='1'>

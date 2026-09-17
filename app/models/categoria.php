@@ -11,9 +11,14 @@ class Categoria{
     }
 
     public function getAll(){
-        $sql="SELECT * FROM categoria";
+        try{$sql="SELECT * FROM categorias";
         $consulta=$this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+        } catch(PDOException){
+            echo "Se entraron errores";
+        }
+        
     }
 
     public function getByid($id){

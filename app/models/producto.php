@@ -12,7 +12,8 @@ class Producto{
 
     public function getAll()
     {
-        $sql="SELECT 
+        try{
+                $sql="SELECT 
         p.id,
         p.nombre,
         p.precio,
@@ -23,6 +24,10 @@ class Producto{
         JOIN categoria ca ON p.id_categoria= ca.id;";
         $consulta = $this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch(PDOException){
+            echo "Ocurrio un error";
+        }
+
     }
 
     public function getByid($id)

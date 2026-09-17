@@ -12,9 +12,15 @@ class Cliente{
 
     public function getAll()
     {
+        try{
         $sql="SELECT * FROM clientes";
         $consulta=$this->connection->query($sql);
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+        }catch(PDOException){
+        echo "Hay un error";
+        }
+        
     }
 
     public function getById($id){

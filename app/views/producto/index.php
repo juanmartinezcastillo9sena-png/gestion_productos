@@ -1,6 +1,6 @@
 <h1>Listado productos</h1>
 
-<table border='1'>
+<table border='2'>
     <tr>
         <th>Nombre</th>
         <th>Precio</th>
@@ -18,14 +18,12 @@
     <?php endforeach; ?>
 </table>
 
-<h1>Producto Consultado</h1>
+<h2>Producto Consultado</h2>
 <table border="1">
         <tr>
             <td>ID</td>
             <td>Nombre</td>
             <td>Precio</td>
-            <td>Proveedor</td>
-            <td>Categoria</td>
         </tr>
         <?php foreach ($productoConsultado as $producto):?>
         <tr>

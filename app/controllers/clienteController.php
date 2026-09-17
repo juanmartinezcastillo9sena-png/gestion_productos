@@ -8,6 +8,8 @@ class clienteController{
 
     $clientes=$clienteModel->getAll();
 
+    $clienteConsultado=$clienteModel->getById(2);
+
     require_once __DIR__ . "/../views/cliente/index.php";
     }
 };
